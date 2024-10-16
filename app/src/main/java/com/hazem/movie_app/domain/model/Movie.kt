@@ -1,4 +1,4 @@
-package com.hazem.movie_app.domain
+package com.hazem.movie_app.domain.model
 
 import com.google.gson.annotations.SerializedName
 import kotlinx.serialization.Serializable

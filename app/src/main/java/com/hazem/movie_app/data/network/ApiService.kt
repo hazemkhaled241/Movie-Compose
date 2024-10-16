@@ -1,6 +1,6 @@
 package com.hazem.movie_app.data.network
 
-import com.hazem.movie_app.domain.ApiResponse
+import com.hazem.movie_app.domain.model.ApiResponse
 import retrofit2.Response
 import retrofit2.http.GET
 

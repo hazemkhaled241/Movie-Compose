@@ -11,7 +11,7 @@ import com.hazem.movie_app.presentation.screen.splash.SplashScreen
 
 @Composable
 fun SetUpNavGraph(navController: NavHostController) {
-    NavHost(navController = navController, startDestination = Screen.SplashScreen) {
+    NavHost(navController = navController, startDestination = Screen.HomeScreen) {
         composable<Screen.SplashScreen> {
             SplashScreen(navController)
         }

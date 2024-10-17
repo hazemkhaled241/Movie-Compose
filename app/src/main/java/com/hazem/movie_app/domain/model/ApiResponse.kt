@@ -1,14 +1,10 @@
 package com.hazem.movie_app.domain.model
 
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
+
 data class ApiResponse(
+    @SerializedName("data")
     val movies:List<Movie> = emptyList(),
-    val success:Boolean,
-    val message:String?=null,
-    val currentPage: String?=null,
-    val pageCount: Int?=null,
-    val prevPage: Int?=null,
-    val totalCount: Int?=null
+    val metadata: MetaData
 )

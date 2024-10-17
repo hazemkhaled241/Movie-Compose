@@ -1,6 +1,5 @@
 package com.hazem.movie_app.presentation.navigation
 
-import com.hazem.movie_app.domain.model.Movie
 import kotlinx.serialization.Serializable
 
 @Serializable

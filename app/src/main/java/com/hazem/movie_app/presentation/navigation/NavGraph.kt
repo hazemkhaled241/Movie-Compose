@@ -5,15 +5,15 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
+import com.hazem.movie_app.presentation.screen.banner.BannerScreen
 import com.hazem.movie_app.presentation.screen.details.DetailsScreen
 import com.hazem.movie_app.presentation.screen.home.HomeScreen
-import com.hazem.movie_app.presentation.screen.splash.SplashScreen
 
 @Composable
 fun SetUpNavGraph(navController: NavHostController) {
-    NavHost(navController = navController, startDestination = Screen.HomeScreen) {
-        composable<Screen.SplashScreen> {
-            SplashScreen(navController)
+    NavHost(navController = navController, startDestination = Screen.BannerScreen) {
+        composable<Screen.BannerScreen> {
+            BannerScreen(navController)
         }
 
         composable<Screen.HomeScreen> {

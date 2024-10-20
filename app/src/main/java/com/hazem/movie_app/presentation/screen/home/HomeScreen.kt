@@ -20,16 +20,17 @@ fun HomeScreen(navController: NavHostController, homeViewModel: MovieViewModel =
     Scaffold(
         modifier = Modifier.background(Color.Transparent),
         topBar = { TopBar() },
-
-        ) { paddingValues ->
+        containerColor = Color.Transparent
+    ) { paddingValues ->
         LazyVerticalGrid(
             columns = GridCells.Fixed(2),
             modifier = Modifier
                 .padding(paddingValues)
                 .fillMaxSize()
                 .background(Color.Transparent)
+
         ) {
-            items(movies.size) {index->
+            items(movies.size) { index ->
                 MovieItem(navController = navController, movie = movies[index])
             }
         }

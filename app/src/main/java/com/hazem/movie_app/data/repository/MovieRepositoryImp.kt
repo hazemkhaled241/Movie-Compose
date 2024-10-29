@@ -9,12 +9,12 @@ import javax.inject.Inject
 
 class MovieRepositoryImp @Inject constructor(private val apiService: ApiService) : MovieRepository {
 
-    override suspend fun getAllMovies(page:Int): Response<ApiResponse> {
+    override suspend fun getAllMovies(page: Int): Response<ApiResponse> {
         return apiService.getMoviesList(page)
     }
 
-    override suspend fun getMovieById(): MovieDetails {
-        TODO("Not yet implemented")
+    override suspend fun getMovieById(id: Int): Response<MovieDetails> {
+       return apiService.getMovieById(id)
     }
 
 }

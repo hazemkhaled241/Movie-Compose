@@ -6,6 +6,6 @@ import retrofit2.Response
 
 interface MovieRepository {
 
-    suspend fun getAllMovies(page:Int):Response<ApiResponse>
-    suspend fun getMovieById():MovieDetails
+    suspend fun getAllMovies(page: Int): Response<ApiResponse>
+    suspend fun getMovieById(id: Int): Response<MovieDetails>
 }

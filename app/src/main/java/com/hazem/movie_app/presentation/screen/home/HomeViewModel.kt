@@ -10,7 +10,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class MovieViewModel @Inject constructor(
+class HomeViewModel @Inject constructor(
     private val homeUseCase: HomeUseCase
 ) : ViewModel() {
     private val _screenState = mutableStateOf(ScreenState())
@@ -23,17 +23,24 @@ class MovieViewModel @Inject constructor(
 
     private fun getAllMovies() {
         viewModelScope.launch {
-            homeUseCase(_screenState.value.page).let { response ->
-                when (response.isSuccessful) {
-                    true -> {
-                        _screenState.value = ScreenState(data = response.body()!!.movies)
-                    }
+            try {
+                homeUseCase(_screenState.value.page).let { response ->
+                    when (response.isSuccessful) {
+                        true -> {
+                            _screenState.value = ScreenState(data = response.body()!!.movies)
+                        }
 
-                    false -> {
-                        _screenState.value = ScreenState(error = response.errorBody().toString())
+                        false -> {
+                            _screenState.value =
+                                ScreenState(error = response.errorBody().toString())
+                        }
                     }
                 }
+            } catch (e: Exception) {
+                _screenState.value = ScreenState(error = e.localizedMessage)
+
             }
+
 
         }
     }

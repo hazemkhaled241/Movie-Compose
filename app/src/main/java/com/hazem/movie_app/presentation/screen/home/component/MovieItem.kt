@@ -36,6 +36,7 @@ import androidx.navigation.NavHostController
 import coil.compose.AsyncImage
 import com.hazem.movie_app.R
 import com.hazem.movie_app.domain.model.Movie
+import com.hazem.movie_app.presentation.navigation.Screen
 
 @Composable
 fun MovieItem(navController: NavHostController, movie: Movie) {
@@ -43,7 +44,9 @@ fun MovieItem(navController: NavHostController, movie: Movie) {
     Card(
         modifier = Modifier
             .padding(10.dp)
-            .clickable { },
+            .clickable {
+                navController.navigate(Screen.DetailsScreen(movie.id))
+            },
         elevation = CardDefaults.cardElevation(8.dp)
     ) {
         Box(modifier = Modifier.fillMaxSize()) {
@@ -82,8 +85,11 @@ fun MovieItem(navController: NavHostController, movie: Movie) {
                 )
                 Spacer(modifier = Modifier.height(8.dp))
 
-                Row (modifier = Modifier.align(Alignment.End)){
-                    Icon(imageVector = Icons.Default.Star, contentDescription = stringResource(R.string.star_icon))
+                Row(modifier = Modifier.align(Alignment.End)) {
+                    Icon(
+                        imageVector = Icons.Default.Star,
+                        contentDescription = stringResource(R.string.star_icon)
+                    )
 
                     Text(
                         text = movie.imdbRating,
@@ -95,7 +101,7 @@ fun MovieItem(navController: NavHostController, movie: Movie) {
                         fontWeight = FontWeight.Bold,
                         maxLines = 2,
 
-                    )
+                        )
                 }
             }
         }

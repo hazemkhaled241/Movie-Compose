@@ -15,7 +15,7 @@ import com.hazem.movie_app.presentation.screen.home.component.MovieItem
 import com.hazem.movie_app.presentation.screen.home.component.TopBar
 
 @Composable
-fun HomeScreen(navController: NavHostController, homeViewModel: MovieViewModel = hiltViewModel()) {
+fun HomeScreen(navController: NavHostController, homeViewModel: HomeViewModel = hiltViewModel()) {
     val movies = homeViewModel.screenState.value.data
     Scaffold(
         modifier = Modifier.background(Color.Transparent),

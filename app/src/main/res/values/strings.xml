@@ -3,4 +3,8 @@
     <string name="banner_image">Banner Image</string>
     <string name="movie_image">Movie Image</string>
     <string name="star_icon">Star Icon</string>
+    <string name="movie_poster">Movie Poster</string>
+    <string name="date_icon">Date Icon</string>
+    <string name="time_icon">Time Icon</string>
+    <string name="icon">Icon</string>
 </resources>

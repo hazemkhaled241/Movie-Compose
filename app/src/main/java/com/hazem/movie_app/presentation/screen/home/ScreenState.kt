@@ -6,6 +6,8 @@ data class ScreenState(
     val data: List<Movie> = emptyList(),
     val page: Int = 1,
     val error: String? = null,
+    val isLoading:Boolean=false,
+    val endReached: Boolean = false,
 
 
     )
